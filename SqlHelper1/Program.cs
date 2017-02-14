@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Configuration;
 using System.Data;
 
 namespace SqlHelper1
@@ -8,6 +9,10 @@ namespace SqlHelper1
     {
         static void Main(string[] args)
         {
+            string ss = ConfigurationManager.AppSettings["conStr"];
+
+            string fa = ConfigurationManager.ConnectionStrings["conStr"].ToString();
+
             string sql = "", storedProcName = "";
             DateTime searchBeginDate = Convert.ToDateTime("2016-06-29");
             DateTime searchEndDate = Convert.ToDateTime("2016-06-30");

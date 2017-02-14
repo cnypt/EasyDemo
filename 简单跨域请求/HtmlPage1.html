@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+        function invokeRemoteMethod() {
+            //在此处增加规范性验证。防止用户恶意输入。
+
+            var name = document.getElementById('name');
+            var phone = document.getElementById('phone');
+            var information = document.getElementById('information');
+
+
+
+
+            $.ajax({
+                url: 'http://192.168.2.139:5342/JsTest.aspx?type=invoke&method=add&time=' + Math.random(),
+                type: 'get',
+                dataType: 'jsonp',
+                jsonp: "callback",
+                data: { action: "SubmitInfo", name: name.value, phone: phone.value, information: information.value },
+                success: function (data) {
+                    alert(data.msg);
+                    name.value = "";
+                    phone.value = "";
+                    information.value = "";
+                },
+                error: function (message) {
+                    alert(message);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h6>姓名Name</h6>
+            <input type="text" id="name" />
+            <h6>电话Phone</h6>
+            <input type="text" id="phone" />
+            <h6>信息Information</h6>
+            <textarea name="" id="information"></textarea>
+            <input type="button" id="but_invoke" value="调用" onclick="invokeRemoteMethod();" />
+        </div>
+
+
+
+
+
+    </form>
+</body>
+</html>
+
