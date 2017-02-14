@@ -23,6 +23,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "string操作", "string操�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "string数组到int数组", "string数组到int数组\string数组到int数组.csproj", "{EE3DA2DC-CC85-4AAE-8A05-8606A3D0D550}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XML操作", "XML操作\XML操作.csproj", "{C0B62560-7415-4B43-80F1-A541FAD35326}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "构造函数", "构造函数\构造函数.csproj", "{3D2517AE-1DE7-403C-A75A-1925C523962E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "根据经纬度计算距离", "根据经纬度计算距离\根据经纬度计算距离.csproj", "{B2AAFF76-5D08-41C4-A531-2815186A268D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "计算时间差", "计算时间差\计算时间差.csproj", "{DBE74149-F976-4228-860B-FD217EDAF6FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "判空与TryParse", "判空与TryParse\判空与TryParse.csproj", "{612291F4-D285-438D-895D-3C9F36077D1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +79,26 @@ Global
 		{EE3DA2DC-CC85-4AAE-8A05-8606A3D0D550}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE3DA2DC-CC85-4AAE-8A05-8606A3D0D550}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE3DA2DC-CC85-4AAE-8A05-8606A3D0D550}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0B62560-7415-4B43-80F1-A541FAD35326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0B62560-7415-4B43-80F1-A541FAD35326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0B62560-7415-4B43-80F1-A541FAD35326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0B62560-7415-4B43-80F1-A541FAD35326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D2517AE-1DE7-403C-A75A-1925C523962E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D2517AE-1DE7-403C-A75A-1925C523962E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D2517AE-1DE7-403C-A75A-1925C523962E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D2517AE-1DE7-403C-A75A-1925C523962E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2AAFF76-5D08-41C4-A531-2815186A268D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2AAFF76-5D08-41C4-A531-2815186A268D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2AAFF76-5D08-41C4-A531-2815186A268D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2AAFF76-5D08-41C4-A531-2815186A268D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBE74149-F976-4228-860B-FD217EDAF6FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBE74149-F976-4228-860B-FD217EDAF6FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBE74149-F976-4228-860B-FD217EDAF6FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBE74149-F976-4228-860B-FD217EDAF6FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{612291F4-D285-438D-895D-3C9F36077D1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{612291F4-D285-438D-895D-3C9F36077D1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{612291F4-D285-438D-895D-3C9F36077D1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{612291F4-D285-438D-895D-3C9F36077D1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

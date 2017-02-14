@@ -45,6 +45,55 @@ namespace string操作
 
             #endregion
 
+            #region woqun
+            //int i = 4;
+
+            //string str = "123456";
+
+            //string strL = str.Substring(i);
+
+            ////从左边截取 i 个字符
+            //string strLeft = str.Substring(0, i);
+            ////从右边截取 i 个字符
+            //string strRight = str.Substring(str.Length - i, i);
+
+            //for (int a = 522; a < 524; a++)
+            //{
+            //    Random rd = new Random();
+            //    int num = rd.Next(100000, 1000000);
+            //    int num2 = rd.Next(100000, 1000000);
+            //    string dnum = num.ToString() + num2.ToString() + a.ToString();
+            //    Console.WriteLine(dnum.Remove(0, dnum.Length - 12));
+            //}
+            #endregion
+
+            #region 生成随机数
+            //char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+            //System.Text.StringBuilder nonce_str_temp = new System.Text.StringBuilder(32);
+
+            //Random rd = new Random();
+            //for (int i = 0; i < 9; i++)
+            //{
+            //    nonce_str_temp.Append(arr[rd.Next(10)]);
+            //}
+
+            //Console.WriteLine(nonce_str_temp.ToString());
+            #endregion
+            List<int> list = new List<int> { 1, 2, 3 };
+            string slist = "";
+            foreach (int item in list)
+            {
+                slist += (item + ",");
+            }
+            if (slist.Length > 2)
+            {
+                slist = slist.Substring(0, slist.Length - 1);
+            }
+
+
+            Console.WriteLine(slist);
+            Console.ReadKey();
+
             Console.ReadKey();
         }
     }
