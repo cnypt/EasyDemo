@@ -48,7 +48,7 @@ namespace AdoDoNet事务
         }
 
         /// <summary>
-        /// 连接字符串
+        /// 执行插入语句，通过事务的处理机制
         /// </summary>
         /// <param name="connection"></param>
         private static void ExecuteSqlTranscation(string connectionString)
@@ -73,7 +73,7 @@ namespace AdoDoNet事务
                     command.CommandText = "select @@IDENTITY";
                     object ob = command.ExecuteScalar();
 
-
+                    //第二句的插入语句插入的内容为上一个插入语句插入后的主键值
                     command.CommandText = "insert into test3(name) values('" + ob.ToString() + "')";
                     command.ExecuteNonQuery();
 
