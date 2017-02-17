@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Transactions;
 
@@ -16,7 +17,44 @@ namespace EFDemo
 
             pr.AddTrans("YouAndMe");
 
+            pr.AddTrans2();
+
             Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 使用事务的Demo2
+        /// </summary>
+        private void AddTrans2()
+        {
+            using (OumindBlogEntities db = new OumindBlogEntities())
+            {
+                DbContextTransaction tran = db.Database.BeginTransaction(System.Data.IsolationLevel.ReadCommitted);
+                using (tran)
+                {
+                    try
+                    {
+                        test3 t3 = db.test3.FirstOrDefault(u => u.ID == 1);
+                        if (t3!=null)
+                        {
+                            t3.name = "t3";
+                            db.SaveChanges();
+                        }
+                        test4 t4 = db.test4.FirstOrDefault(u=>u.ID==1);
+                        if (t4!=null)
+                        {
+                            t4.name = "t4";
+                            db.SaveChanges();
+                        }
+                        tran.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        tran.Rollback();
+                    }
+                }
+            }
+
         }
 
         /// <summary>
