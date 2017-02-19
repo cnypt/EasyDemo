@@ -1,0 +1,33 @@
+﻿1.GroupBy在linq中的用法  
+    using (var db = new XWYEntities())
+    {
+        int[] arrStatus = { 2, 3 };
+        var query = from o in db.B_Order
+                    join p in db.BusinessPayRecord on o.TradeNo equals p.TradeNo
+                    where o.BusinessID == BusinessID && arrStatus.Contains(o.OrderStatus) && p.Status == 1 && dtStart <= p.PayTime && p.PayTime < dtEnd
+                    select new OrderStatisticsModel
+                                {
+                                    OrderID = o.OrderID,
+                                    TradeNo = o.TradeNo,
+                                    TotalAmt = o.TotalAmt,
+                                    PayTime = p.PayTime,
+                                    OrderType = o.OrderType
+                                };
+        List<OrderStatisticsModel> list = query.ToList<OrderStatisticsModel>();
+
+        var sb = list.Select(n => new { Trade = n.TradeNo, Time = Convert.ToDateTime(n.PayTime).ToString("yyyy-MM-dd"), TotalAmt = n.TotalAmt }).ToList();
+
+        var sbt = sb.GroupBy(x => x.Time);
+
+        var sbr = sbt.Select(x => new
+        {
+            Key = x.Key,
+            TotalAmt = x.Sum(s => s.TotalAmt),
+            Count = x.Count()
+        }).OrderBy(u => u.Key);
+
+        var totalamt = sbr.Sum(u => u.TotalAmt);
+        var count = sbr.Sum(u => u.Count);
+        result = JsonHelper.EncodeNew(new { result = sbr.ToList(), totalamt = totalamt, Count = count });
+        resultCode = "0";
+    }
