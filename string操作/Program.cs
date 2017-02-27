@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using HelperClass;
 
 namespace string操作
 {
@@ -79,6 +77,7 @@ namespace string操作
 
             //Console.WriteLine(nonce_str_temp.ToString());
             #endregion
+
             List<int> list = new List<int> { 1, 2, 3 };
             string slist = "";
             foreach (int item in list)
@@ -92,7 +91,11 @@ namespace string操作
 
 
             Console.WriteLine(slist);
-            Console.ReadKey();
+
+
+            string inputnum = Console.ReadLine();
+
+            Console.WriteLine(inputnum +"  转换成汉字后  "+ Helper.RMBConvert(inputnum));
 
             Console.ReadKey();
         }
