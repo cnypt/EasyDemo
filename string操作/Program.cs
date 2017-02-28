@@ -78,24 +78,23 @@ namespace string操作
             //Console.WriteLine(nonce_str_temp.ToString());
             #endregion
 
-            List<int> list = new List<int> { 1, 2, 3 };
-            string slist = "";
-            foreach (int item in list)
+            #region 将字符串转换成int数组的格式。
+            string serviceids = "1,232,3231,214";
+
+            int[] arrIds = Array.ConvertAll<string, int>(serviceids.Split(','), delegate (string s) { return int.Parse(s); });
+
+            for (int i = 0; i < arrIds.Length; i++)
             {
-                slist += (item + ",");
+                Console.WriteLine(arrIds[i]);
             }
-            if (slist.Length > 2)
-            {
-                slist = slist.Substring(0, slist.Length - 1);
-            }
+            #endregion
 
-
-            Console.WriteLine(slist);
-
-
+            #region 人民币转换
             string inputnum = Console.ReadLine();
 
-            Console.WriteLine(inputnum +"  转换成汉字后  "+ Helper.RMBConvert(inputnum));
+            Console.WriteLine(inputnum + "  转换成汉字后  " + Helper.RMBConvert(inputnum));
+            #endregion
+
 
             Console.ReadKey();
         }
